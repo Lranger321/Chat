@@ -1,0 +1,12 @@
+1)Авторизация
+Request: method = login,login,password;
+Response: method,status(ok/error),error_type
+2)Регистрация
+Request: method = register,login,password,gender,name,lastName;
+Response: method,status(ok/error),error_type
+3)Send message
+Request: method = send_message,login,message,time;
+Response: Отправить сообщение всем кроме login
+4)Получить чат
+Request: method = get_chat;
+Response: method,status,[login,message,time]
