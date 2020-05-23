@@ -21,7 +21,7 @@ public class MainController {
     private static Scene chatScene;
     private static Scene registerScene;
 
-    public static void artemLox(String scene) {
+    public static void changeScene(String scene) {
         FXMLLoader loader = new FXMLLoader();
         String form = "";
 
@@ -43,11 +43,11 @@ public class MainController {
         Stage stage = new Stage();
         if (scene.equals("login")) stage.setScene(getLoginScene(root));
         if (scene.equals("register")) stage.setScene(getRegisterScene(root));
-        stage.setTitle("Laguna chat");
+        stage.setTitle("Chat");
         stage.show();
     }
 
-    public static void openScene(String login, String password){
+    public static void openScene(String login, String password) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainController.class.getResource(CHAT_FORM));
         try {
@@ -59,9 +59,9 @@ public class MainController {
         Stage stage = new Stage();
         stage.setScene(getChatScene(root));
         ChatController controllerEdit = loader.getController();
-        stage.setTitle("Laguna chat");
+        stage.setTitle("Chat");
         stage.show();
-        controllerEdit.start(login,password);
+        controllerEdit.start(login, password);
     }
 
     private static Scene getLoginScene(Parent root) {
@@ -82,7 +82,7 @@ public class MainController {
 
     private static Scene getChatScene(Parent root) {
         if (!chatIsExist) {
-            chatScene= new Scene(root, 400, 600);
+            chatScene = new Scene(root, 400, 600);
             chatIsExist = true;
         }
 

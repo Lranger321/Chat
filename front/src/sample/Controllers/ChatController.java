@@ -63,7 +63,7 @@ public class ChatController {
                                     message.get("message"));
                         }
                     }
-                    if(responce.get("method").equals("send_message")){
+                    if (responce.get("method").equals("send_message")) {
                         addToChat(responce.get("time"), responce.get("login"),
                                 responce.get("message"));
                     }

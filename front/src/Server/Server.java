@@ -18,10 +18,6 @@ public class Server {
         }
     }
 
-    public static BufferedWriter getOut(){
-        return out;
-    }
-
     public static BufferedReader getIn(){
         return in;
     }

@@ -49,10 +49,10 @@ public class Controller {
                         HashMap<String, String> map = Parser.parse(msg);
                         if (map.get("method").equals("login")) {
                             if (map.get("status").equals("ok")) {
-                                Platform.runLater(()->{
+                                Platform.runLater(() -> {
                                     signInButton.getScene().getWindow().hide();
                                     Thread.currentThread().interrupt();
-                                    MainController.openScene(loginFiled.getText(),passwordField.getText());
+                                    MainController.openScene(loginFiled.getText(), passwordField.getText());
                                 });
                                 break;
                             } else {
@@ -70,7 +70,7 @@ public class Controller {
 
         signUpButton.setOnAction(actionEvent -> {
             loginFiled.getScene().getWindow().hide();
-            MainController.artemLox("register");
+            MainController.changeScene("register");
         });
     }
 
